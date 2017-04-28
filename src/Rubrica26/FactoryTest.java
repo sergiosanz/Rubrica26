@@ -9,18 +9,19 @@ import org.junit.Test;
 
 public class FactoryTest {
 
+	List<Container> cont;
+	Factory factoria;
+	
 	@Test
 	public void createListTest() {
-		Factory factoria = new Factory();
-		List<Container> cont = new ArrayList<Container>();
+		factoria = new Factory();
+		cont = new ArrayList<Container>();
 		cont = factoria.createList();
 		
 		for (int i = 0; i < cont.size(); i++) {
 			for (int j = i+1; j < cont.size(); j++) {
 				assertTrue(cont.get(i) != cont.get(j));
 			}
-		}
-		
+		}	
 	}
-
 }
